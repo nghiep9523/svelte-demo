@@ -2,4 +2,39 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  .navigator {
+    font-size: 20px;
+    margin-top: 16px;
+    font-weight: bold;
+    display: flex;
+    width: 40%;
+    border: 1px solid black;
+    :global(a) {
+      text-decoration: none;
+      color: black;
+      &:hover {
+        text-decoration: none;
+        color: white;
+      }
+    }
+    .link-wrapper {
+      display: flex;
+      padding: 10px 20px;
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        background-color: black;
+        color: white;
+        :global(a) {
+          text-decoration: none;
+          color: white;
+        }
+      }
+      &:not(:last-child) {
+        border-right: 1px solid black;
+      }
+    }
+  }
 }
