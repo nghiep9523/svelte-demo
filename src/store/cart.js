@@ -28,10 +28,12 @@ const createCart = () => {
 
   const removeItemFromCart = id =>
     update(store => {
-      const { items, itemCount } = store;
+      const { items, itemCount, total } = store;
       const newItems = [...items];
       const index = items.findIndex(item => item.id === id);
-      newItems.splice(index, 1);
+      if (itemCount[id] === 1) {
+        newItems.splice(index, 1);
+      }
       return {
         ...store,
         items: newItems,
